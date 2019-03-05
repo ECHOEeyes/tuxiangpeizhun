@@ -1,0 +1,10 @@
+首先在命令行输入：
+>> clear all
+>> cpselect('Image B.jpg','Image A.jpg')
+在选完点并导出到工作区之后，执行以下代码：
+ImageA=imread('Image A.jpg');
+ImageB=imread('Image B.jpg');
+RegTrans=cp2tform(movingPoints,fixedPoints,'affine'); 
+NewImg=imtransform(ImageB,RegTrans); 
+subplot(1,2,1),imshow(NewImg); 
+subplot(1,2,2),imshow(ImageA);
